@@ -26,6 +26,7 @@
 "    -> Misc
 "    -> Helper functions
 "    -> Vundle plugins
+"    -> Encryption
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -40,7 +41,7 @@ set history=700
 filetype plugin on
 filetype indent on
 
-call pathogen#infect()
+"call pathogen#infect()
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -446,8 +447,8 @@ com! DiffSaved call s:DiffWithSaved()
 set nocompatible               " be iMproved
 filetype off                   " required!
 
- set rtp+=~/.vim/bundle/vundle/
- call vundle#rc()
+ set rtp+=~/.vim/bundle/Vundle.vim
+ call vundle#begin()
 
 " let Vundle manage Vundle
  " required! 
@@ -461,7 +462,7 @@ filetype off                   " required!
  Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
  Bundle 'tpope/vim-rails.git'
  Bundle 'pangloss/vim-javascript'    
- Bundle 'b4winckler/vim-obj'  
+ "Bundle 'b4winckler/vim-obj'  
  Bundle 'tmhedberg/SimpylFold' 
  " The Silver Searcher is a fantastic command line tool to search source code in a project. WICKED FAST 
  Bundle 'rking/ag.vim' 
@@ -597,7 +598,12 @@ let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E1
  " AUTHOR NAME, using: http://www.vim.org/scripts/script.php?script_id=2902
  " """"""""""""""""""""""""""""""""""""
 let g:vimrc_author='Vikas Gupta' 
-let g:vimrc_email='vikas@wegilant.com' 
+let g:vimrc_email='' 
 let g:vimrc_homepage=' '
+
+"""""""""""""""""""""""""""""""""""
+" ENCRYPTION
+"""""""""""""""""""""""""""""""""""
+:setlocal cm=blowfish2     " best (requires Vim version 7.4.399 or higher
 nmap <F4> :AuthorInfoDetect<cr>
  
