@@ -26,7 +26,6 @@
 "    -> Misc
 "    -> Helper functions
 "    -> Vundle plugins
-"    -> Encryption
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -36,6 +35,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=700
+
+set nocompatible               " be iMproved
 
 " Enable filetype plugins
 filetype plugin on
@@ -118,9 +119,12 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
+" Show comments in Blue
+highlight Comment ctermfg=DarkBlue
+
 " Set extra options when running in GUI mode
 if has("gui_running")
-    colorscheme solarized
+    colorscheme material-theme
     set background=dark
     set guioptions-=T
     set guioptions+=e
@@ -444,11 +448,10 @@ com! DiffSaved call s:DiffWithSaved()
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 "VUNDLE 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible               " be iMproved
 filetype off                   " required!
 
  set rtp+=~/.vim/bundle/Vundle.vim
- call vundle#begin()
+ call vundle#rc()
 
 " let Vundle manage Vundle
  " required! 
@@ -462,7 +465,7 @@ filetype off                   " required!
  Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
  Bundle 'tpope/vim-rails.git'
  Bundle 'pangloss/vim-javascript'    
- "Bundle 'b4winckler/vim-obj'  
+ Bundle 'b4winckler/vim-obj'  
  Bundle 'tmhedberg/SimpylFold' 
  " The Silver Searcher is a fantastic command line tool to search source code in a project. WICKED FAST 
  Bundle 'rking/ag.vim' 
@@ -477,7 +480,7 @@ filetype off                   " required!
  "C IDE
  Bundle 'vim-scripts/c.vim'
 
- Bundle 'vim-scripts/ShowMarks'
+ "Bundle 'vim-scripts/ShowMarks'
  Bundle 'tmhedberg/matchit'
  Bundle 'chazy/cscope_maps'
 
@@ -496,14 +499,27 @@ filetype off                   " required!
  Bundle 'git://git.wincent.com/command-t.git'
  Bundle 'bling/vim-airline' 
  " To switch between header files and implementation. Also supports Xbuild and Xinstall
- Bundle 'eraserhd/vim-ios.git' 
+ "Bundle 'eraserhd/vim-ios.git' 
   " for folding
  "Bundle 'ryanss/im-hackernews'
  " ...
  "call vundle#end()
+ "
+ " VIMWIKI
+ Bundle 'vimwiki/vimwiki'
+ " Note making
+ Bundle 'xolox/vim-notes'
+ Bundle 'xolox/vim-misc'
+ "Bundle 'fmoralesc/vim-pad'
 
  filetype plugin indent on   
 
+ """""""""""""""""""""""""
+ " VIM-NOTES + vim-pad + vimwiki
+ """"""""""""""""""""""""
+ let g:notes_directories = ['~/Dropbox/v-key/notes']
+ let g:notes_suffix = '.txt'
+ let g:vimwiki_list = [{'path': '~/Dropbox/notes/vimwiki'}]
  """"""""""""""""""""""""""
  " CTRL P
  """"""""""""""""""""""""""""
@@ -598,12 +614,7 @@ let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E1
  " AUTHOR NAME, using: http://www.vim.org/scripts/script.php?script_id=2902
  " """"""""""""""""""""""""""""""""""""
 let g:vimrc_author='Vikas Gupta' 
-let g:vimrc_email='' 
+let g:vimrc_email='vikas@wegilant.com' 
 let g:vimrc_homepage=' '
-
-"""""""""""""""""""""""""""""""""""
-" ENCRYPTION
-"""""""""""""""""""""""""""""""""""
-:setlocal cm=blowfish2     " best (requires Vim version 7.4.399 or higher
 nmap <F4> :AuthorInfoDetect<cr>
  
