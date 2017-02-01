@@ -463,9 +463,9 @@ filetype off                   " required!
  Bundle 'tpope/vim-fugitive'
  Bundle 'Lokaltog/vim-easymotion'
  Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
- Bundle 'tpope/vim-rails.git'
+ "Bundle 'tpope/vim-rails.git'
  Bundle 'pangloss/vim-javascript'    
- Bundle 'b4winckler/vim-obj'  
+ "Bundle 'b4winckler/vim-obj'  
  Bundle 'tmhedberg/SimpylFold' 
  " The Silver Searcher is a fantastic command line tool to search source code in a project. WICKED FAST 
  Bundle 'rking/ag.vim' 
@@ -495,22 +495,27 @@ filetype off                   " required!
  "nerd commentor
  Bundle 'scrooloose/nerdcommenter'
  Bundle 'scrooloose/nerdtree'
- Bundle 'scrooloose/syntastic'
+ "Bundle 'scrooloose/syntastic'     " using ale, its async
+ Bundle 'w0rp/ale'
  Bundle 'git://git.wincent.com/command-t.git'
  Bundle 'bling/vim-airline' 
+
+ " autocompletion
+ Bundle 'Valloric/YouCompleteMe'
+
  " To switch between header files and implementation. Also supports Xbuild and Xinstall
  "Bundle 'eraserhd/vim-ios.git' 
   " for folding
  "Bundle 'ryanss/im-hackernews'
  " ...
- "call vundle#end()
  "
  " VIMWIKI
- Bundle 'vimwiki/vimwiki'
+ "Bundle 'vimwiki/vimwiki'
  " Note making
  Bundle 'xolox/vim-notes'
  Bundle 'xolox/vim-misc'
  "Bundle 'fmoralesc/vim-pad'
+ call vundle#end()
 
  filetype plugin indent on   
 
@@ -614,7 +619,7 @@ let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E1
  " AUTHOR NAME, using: http://www.vim.org/scripts/script.php?script_id=2902
  " """"""""""""""""""""""""""""""""""""
 let g:vimrc_author='Vikas Gupta' 
-let g:vimrc_email='vikas@wegilant.com' 
+let g:vimrc_email='vikasgupta.nit@gmail.com' 
 let g:vimrc_homepage=' '
 nmap <F4> :AuthorInfoDetect<cr>
  
