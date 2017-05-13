@@ -124,7 +124,7 @@ highlight Comment ctermfg=DarkBlue
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-    colorscheme material-theme
+    colorscheme gruvbox
     set background=dark
     set guioptions-=T
     set guioptions+=e
@@ -522,9 +522,10 @@ filetype off                   " required!
  """""""""""""""""""""""""
  " VIM-NOTES + vim-pad + vimwiki
  """"""""""""""""""""""""
- let g:notes_directories = ['~/Dropbox/v-key/notes']
- let g:notes_suffix = '.txt'
+ let g:notes_directories = ['~/Dropbox/notes']
+ let g:notes_suffix = '.md'
  let g:vimwiki_list = [{'path': '~/Dropbox/notes/vimwiki'}]
+
  """"""""""""""""""""""""""
  " CTRL P
  """"""""""""""""""""""""""""
