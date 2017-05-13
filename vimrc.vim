@@ -496,7 +496,10 @@ filetype off                   " required!
  Bundle 'scrooloose/nerdcommenter'
  Bundle 'scrooloose/nerdtree'
  "Bundle 'scrooloose/syntastic'     " using ale, its async
- Bundle 'w0rp/ale'
+ if has("gui_running")
+     Bundle 'w0rp/ale'
+ endif
+
  Bundle 'git://git.wincent.com/command-t.git'
  Bundle 'bling/vim-airline' 
 
