@@ -506,6 +506,9 @@ filetype off                   " required!
  " autocompletion
  Bundle 'Valloric/YouCompleteMe'
 
+ "Markdown folding
+ Bundle 'nelstrom/vim-markdown-folding'
+
  " To switch between header files and implementation. Also supports Xbuild and Xinstall
  "Bundle 'eraserhd/vim-ios.git' 
   " for folding
