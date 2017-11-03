@@ -521,6 +521,8 @@ filetype off                   " required!
  Bundle 'xolox/vim-notes'
  Bundle 'xolox/vim-misc'
  "Bundle 'fmoralesc/vim-pad'
+ "
+ Bundle 'kelwin/vim-smali'
  call vundle#end()
 
  filetype plugin indent on   
@@ -528,9 +530,9 @@ filetype off                   " required!
  """""""""""""""""""""""""
  " VIM-NOTES + vim-pad + vimwiki
  """"""""""""""""""""""""
- let g:notes_directories = ['~/Dropbox/notes']
+ let g:notes_directories = ['~/Documents/OneDrive/notes']
  let g:notes_suffix = '.md'
- let g:vimwiki_list = [{'path': '~/Dropbox/notes/vimwiki'}]
+ "let g:vimwiki_list = [{'path': '~/toolbox/notes/vimwiki'}]
 
  """"""""""""""""""""""""""
  " CTRL P
