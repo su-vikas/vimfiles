@@ -26,6 +26,7 @@
 "    -> Misc
 "    -> Helper functions
 "    -> Vundle plugins
+"    -> Crypto
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -632,3 +633,9 @@ let g:vimrc_email='vikasgupta.nit@gmail.com'
 let g:vimrc_homepage=' '
 nmap <F4> :AuthorInfoDetect<cr>
  
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+"CRYPTO 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"set cryptmethod=blowfish2
+
