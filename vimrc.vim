@@ -462,7 +462,7 @@ filetype off                   " required!
  "
  " original repos on github
  Bundle 'tpope/vim-fugitive'
- Bundle 'Lokaltog/vim-easymotion'
+ Bundle 'easymotion/vim-easymotion'
  Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
  "Bundle 'tpope/vim-rails.git'
  Bundle 'pangloss/vim-javascript'    
@@ -509,8 +509,13 @@ filetype off                   " required!
 
  " Markdown syntax highlighting
  Bundle 'gabrielelana/vim-markdown'
+ Bundle 'SidOfc/mkdx'
+
  "Markdown folding
  Bundle 'nelstrom/vim-markdown-folding'
+
+ " Lightning fast left-right movement in VIM
+ Bundle 'unblevable/quick-scope'
 
  " To switch between header files and implementation. Also supports Xbuild and Xinstall
  "Bundle 'eraserhd/vim-ios.git' 
@@ -563,7 +568,16 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   "let g:ctrlp_use_caching = 0
-endif
+"endif
+""""""""""""""""""""""""""""""
+" QUICK SCOPE
+"""""""""""""""""""""""""""""""
+
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" Trigger a highlight only when pressing f and F.
+let g:qs_highlight_on_keys = ['f', 'F']
 
 
  """""""""""""""""'
