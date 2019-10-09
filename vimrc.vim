@@ -487,7 +487,7 @@ filetype off                   " required!
  " non github repos
  Bundle 'mbbill/undotree'
  Bundle 'majutsushi/tagbar'
- Bundle 'klen/python-mode.git'
+ "Bundle 'klen/python-mode.git'
  Bundle 'Lokaltog/vim-powerline'
 
  "gitk support
@@ -597,6 +597,8 @@ endif
  let g:pymode_syntax_all = 1
  let g:pymode_syntax_indent_errors = g:pymode_syntax_all
  let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+ let g:pymode_python = 'python3'
 
  """"""""""""""""""""""""""""""""
  " NERDTREE CONFIG
