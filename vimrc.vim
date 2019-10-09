@@ -461,15 +461,13 @@ filetype off                   " required!
  " My Bundles here:
  "
  " original repos on github
- Bundle 'tpope/vim-fugitive'
+ "Bundle 'tpope/vim-fugitive'
  Bundle 'easymotion/vim-easymotion'
  Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
- "Bundle 'tpope/vim-rails.git'
  Bundle 'pangloss/vim-javascript'    
- "Bundle 'b4winckler/vim-obj'  
  Bundle 'tmhedberg/SimpylFold' 
  " The Silver Searcher is a fantastic command line tool to search source code in a project. WICKED FAST 
- Bundle 'rking/ag.vim' 
+ "Bundle 'rking/ag.vim' 
  " Gundo displaying that undo tree in graphical form. 
  Bundle 'sjl/gundo.vim'
  Bundle 'kien/ctrlp.vim'
@@ -483,7 +481,7 @@ filetype off                   " required!
 
  "Bundle 'vim-scripts/ShowMarks'
  Bundle 'tmhedberg/matchit'
- Bundle 'chazy/cscope_maps'
+ "Bundle 'chazy/cscope_maps'
 
  " non github repos
  Bundle 'mbbill/undotree'
@@ -491,8 +489,6 @@ filetype off                   " required!
  Bundle 'klen/python-mode.git'
  Bundle 'Lokaltog/vim-powerline'
 
- "gitk support
- "Bundle 'gregsexton/gitv'
  "nerd commentor
  Bundle 'scrooloose/nerdcommenter'
  Bundle 'scrooloose/nerdtree'
@@ -501,15 +497,11 @@ filetype off                   " required!
      Bundle 'w0rp/ale'
  endif
 
- Bundle 'git://git.wincent.com/command-t.git'
+ "Bundle 'git://git.wincent.com/command-t.git'
  Bundle 'bling/vim-airline' 
 
  " autocompletion
  Bundle 'Valloric/YouCompleteMe'
-
- " Markdown syntax highlighting
- Bundle 'gabrielelana/vim-markdown'
- Bundle 'SidOfc/mkdx'
 
  "Markdown folding
  Bundle 'nelstrom/vim-markdown-folding'
@@ -517,30 +509,31 @@ filetype off                   " required!
  " Lightning fast left-right movement in VIM
  Bundle 'unblevable/quick-scope'
 
- " To switch between header files and implementation. Also supports Xbuild and Xinstall
- "Bundle 'eraserhd/vim-ios.git' 
-  " for folding
- "Bundle 'ryanss/im-hackernews'
- " ...
- "
  " VIMWIKI
- "Bundle 'vimwiki/vimwiki'
- " Note making
- Bundle 'xolox/vim-notes'
- Bundle 'xolox/vim-misc'
- "Bundle 'fmoralesc/vim-pad'
- "
+ Bundle 'vimwiki/vimwiki'
+
  Bundle 'kelwin/vim-smali'
  call vundle#end()
 
  filetype plugin indent on   
 
- """""""""""""""""""""""""
+ """""""""""""""""""""""""""""""
  " VIM-NOTES + vim-pad + vimwiki
- """"""""""""""""""""""""
- let g:notes_directories = ['~/Documents/OneDrive/notes']
- let g:notes_suffix = '.md'
- "let g:vimwiki_list = [{'path': '~/toolbox/notes/vimwiki'}]
+ """""""""""""""""""""""""""""""
+ "let g:notes_directories = ['~/Documents/OneDrive/notes']
+ "let g:notes_suffix = '.md'
+ let g:vimwiki_list = [{'path': '~/Documents/OneDrive/notes', 'syntax':'markdown', 'ext':'.md'}]
+
+""""""""""""""""""""""""""
+ " MARKDOWN 
+ """"""""""""""""""""""""""""
+ let g:vim_markdown_toc_autofit = 1
+ " change By default text emphasis works across multiple lines until a closing token is found.
+ let g:vim_markdown_emphasis_multiline = 0
+
+ "autocmd FileType vimwiki set ft=markdown
+ " Vimwiki dont think all markdowns are vimwiki files
+ let g:vimwiki_global_ext = 0
 
  """"""""""""""""""""""""""
  " CTRL P
