@@ -131,7 +131,7 @@ if has("gui_running")
     set guioptions+=e
     set t_Co=256
     set guitablabel=%M\ %t
-    set guifont=Hack\ 9
+    set guifont=Hack\ 10
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -492,7 +492,7 @@ filetype off                   " required!
  Bundle 'Lokaltog/vim-powerline'
 
  "gitk support
- Bundle 'gregsexton/gitv'
+ "Bundle 'gregsexton/gitv'
  "nerd commentor
  Bundle 'scrooloose/nerdcommenter'
  Bundle 'scrooloose/nerdtree'
@@ -507,6 +507,8 @@ filetype off                   " required!
  " autocompletion
  Bundle 'Valloric/YouCompleteMe'
 
+ " Markdown syntax highlighting
+ Bundle 'gabrielelana/vim-markdown'
  "Markdown folding
  Bundle 'nelstrom/vim-markdown-folding'
 
@@ -548,19 +550,19 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
  " AG SILVER SEARCHER 
  """"""""""""""""""""""""""""
  " open ag.vim
- nnoremap <leader>a :Ag
+ "nnoremap <leader>a :Ag
 
 " The Silver Searcher
 " If ag is there, use it instead of grep
-if executable('ag')
+"if executable('ag')
   " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  "set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  "let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  "let g:ctrlp_use_caching = 0
 endif
 
 
