@@ -26,6 +26,7 @@
 "    -> Misc
 "    -> Helper functions
 "    -> Vundle plugins
+"    -> Crypto
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -130,7 +131,7 @@ if has("gui_running")
     set guioptions+=e
     set t_Co=256
     set guitablabel=%M\ %t
-    set guifont=Hack\ 9
+    set guifont=Hack\ 10
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -460,15 +461,13 @@ filetype off                   " required!
  " My Bundles here:
  "
  " original repos on github
- Bundle 'tpope/vim-fugitive'
- Bundle 'Lokaltog/vim-easymotion'
+ "Bundle 'tpope/vim-fugitive'
+ Bundle 'easymotion/vim-easymotion'
  Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
- "Bundle 'tpope/vim-rails.git'
  Bundle 'pangloss/vim-javascript'    
- "Bundle 'b4winckler/vim-obj'  
  Bundle 'tmhedberg/SimpylFold' 
  " The Silver Searcher is a fantastic command line tool to search source code in a project. WICKED FAST 
- Bundle 'rking/ag.vim' 
+ "Bundle 'rking/ag.vim' 
  " Gundo displaying that undo tree in graphical form. 
  Bundle 'sjl/gundo.vim'
  Bundle 'kien/ctrlp.vim'
@@ -482,7 +481,7 @@ filetype off                   " required!
 
  "Bundle 'vim-scripts/ShowMarks'
  Bundle 'tmhedberg/matchit'
- Bundle 'chazy/cscope_maps'
+ "Bundle 'chazy/cscope_maps'
 
  " non github repos
  Bundle 'mbbill/undotree'
@@ -490,8 +489,6 @@ filetype off                   " required!
  "Bundle 'klen/python-mode.git'
  Bundle 'Lokaltog/vim-powerline'
 
- "gitk support
- Bundle 'gregsexton/gitv'
  "nerd commentor
  Bundle 'scrooloose/nerdcommenter'
  Bundle 'scrooloose/nerdtree'
@@ -500,7 +497,7 @@ filetype off                   " required!
      Bundle 'w0rp/ale'
  endif
 
- Bundle 'git://git.wincent.com/command-t.git'
+ "Bundle 'git://git.wincent.com/command-t.git'
  Bundle 'bling/vim-airline' 
 
  " autocompletion
@@ -509,30 +506,34 @@ filetype off                   " required!
  "Markdown folding
  Bundle 'nelstrom/vim-markdown-folding'
 
- " To switch between header files and implementation. Also supports Xbuild and Xinstall
- "Bundle 'eraserhd/vim-ios.git' 
-  " for folding
- "Bundle 'ryanss/im-hackernews'
- " ...
- "
+ " Lightning fast left-right movement in VIM
+ Bundle 'unblevable/quick-scope'
+
  " VIMWIKI
- "Bundle 'vimwiki/vimwiki'
- " Note making
- Bundle 'xolox/vim-notes'
- Bundle 'xolox/vim-misc'
- "Bundle 'fmoralesc/vim-pad'
- "
+ Bundle 'vimwiki/vimwiki'
+
  Bundle 'kelwin/vim-smali'
  call vundle#end()
 
  filetype plugin indent on   
 
- """""""""""""""""""""""""
+ """""""""""""""""""""""""""""""
  " VIM-NOTES + vim-pad + vimwiki
- """"""""""""""""""""""""
- let g:notes_directories = ['~/Documents/OneDrive/notes']
- let g:notes_suffix = '.md'
- "let g:vimwiki_list = [{'path': '~/toolbox/notes/vimwiki'}]
+ """""""""""""""""""""""""""""""
+ "let g:notes_directories = ['~/Documents/OneDrive/notes']
+ "let g:notes_suffix = '.md'
+ let g:vimwiki_list = [{'path': '~/Documents/OneDrive/notes', 'syntax':'markdown', 'ext':'.md'}]
+
+""""""""""""""""""""""""""
+ " MARKDOWN 
+ """"""""""""""""""""""""""""
+ let g:vim_markdown_toc_autofit = 1
+ " change By default text emphasis works across multiple lines until a closing token is found.
+ let g:vim_markdown_emphasis_multiline = 0
+
+ "autocmd FileType vimwiki set ft=markdown
+ " Vimwiki dont think all markdowns are vimwiki files
+ let g:vimwiki_global_ext = 0
 
  """"""""""""""""""""""""""
  " CTRL P
@@ -547,20 +548,29 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
  " AG SILVER SEARCHER 
  """"""""""""""""""""""""""""
  " open ag.vim
- nnoremap <leader>a :Ag
+ "nnoremap <leader>a :Ag
 
 " The Silver Searcher
 " If ag is there, use it instead of grep
-if executable('ag')
+"if executable('ag')
   " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  "set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  "let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
+  "let g:ctrlp_use_caching = 0
+"endif
+""""""""""""""""""""""""""""""
+" QUICK SCOPE
+"""""""""""""""""""""""""""""""
+
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" Trigger a highlight only when pressing f and F.
+let g:qs_highlight_on_keys = ['f', 'F']
 
 
  """""""""""""""""'
@@ -634,3 +644,9 @@ let g:vimrc_email='vikasgupta.nit@gmail.com'
 let g:vimrc_homepage=' '
 nmap <F4> :AuthorInfoDetect<cr>
  
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+"CRYPTO 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"set cryptmethod=blowfish2
+
