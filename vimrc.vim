@@ -461,7 +461,7 @@ filetype off                   " required!
  " My Bundles here:
  "
  " original repos on github
- "Bundle 'tpope/vim-fugitive'
+ Bundle 'tpope/vim-fugitive'
  Bundle 'easymotion/vim-easymotion'
  Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
  Bundle 'pangloss/vim-javascript'    
