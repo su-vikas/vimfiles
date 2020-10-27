@@ -461,11 +461,12 @@ filetype off                   " required!
  " My Bundles here:
  "
  " original repos on github
- "Bundle 'tpope/vim-fugitive'
+ Bundle 'tpope/vim-fugitive'
  Bundle 'easymotion/vim-easymotion'
  Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
  Bundle 'pangloss/vim-javascript'    
  Bundle 'tmhedberg/SimpylFold' 
+ Plugin 'dart-lang/dart-vim-plugin'
  " The Silver Searcher is a fantastic command line tool to search source code in a project. WICKED FAST 
  "Bundle 'rking/ag.vim' 
  " Gundo displaying that undo tree in graphical form. 
@@ -493,9 +494,9 @@ filetype off                   " required!
  Bundle 'scrooloose/nerdcommenter'
  Bundle 'scrooloose/nerdtree'
  "Bundle 'scrooloose/syntastic'     " using ale, its async
- if has("gui_running")
+ "if has("gui_running")
      Bundle 'w0rp/ale'
- endif
+ "endif
 
  "Bundle 'git://git.wincent.com/command-t.git'
  Bundle 'bling/vim-airline' 
@@ -534,6 +535,22 @@ filetype off                   " required!
  "autocmd FileType vimwiki set ft=markdown
  " Vimwiki dont think all markdowns are vimwiki files
  let g:vimwiki_global_ext = 0
+ """"""""""""""""""""""""""
+ " ALE
+ """"""""""""""""""""""""""""
+ " dont run when you open a file
+ let g:ale_lint_on_enter = 0
+ " RUn only when file is saved
+ let g:ale_lint_on_text_changed = 'never'
+ let g:ale_fixers = {
+ \'*': ['remove_trailing_lines', 'trim_whitespace', 'prettier'],
+ \}
+ let g:ale_linters = {
+             \'markdown': ['mdl', 'markdownlint'],
+             \'md': ['mdl', 'markdownlint'],
+             \'javascript': ['eslint'],
+             \}
+ 
 
  """"""""""""""""""""""""""
  " CTRL P
@@ -628,6 +645,8 @@ nnoremap <leader>u :GundoToggle<CR>
   "Use flake8
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E127,E128,W801"'
+let g:syntastic_markdown_mdl_exec = 'markdownlint'
+let g:syntastic_markdown_mdl_args = ''
 
  """""""""""""""""""""""""""""""""""
  "DOXYGEN
