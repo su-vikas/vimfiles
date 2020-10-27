@@ -510,9 +510,6 @@ filetype off                   " required!
  " Lightning fast left-right movement in VIM
  Bundle 'unblevable/quick-scope'
 
- " VIMWIKI
- Bundle 'vimwiki/vimwiki'
-
  Bundle 'kelwin/vim-smali'
  call vundle#end()
 
