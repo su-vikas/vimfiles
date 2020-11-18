@@ -486,7 +486,6 @@ filetype off                   " required!
 
  " non github repos
  Bundle 'mbbill/undotree'
- Bundle 'majutsushi/tagbar'
  "Bundle 'klen/python-mode.git'
  Bundle 'Lokaltog/vim-powerline'
 
@@ -511,6 +510,7 @@ filetype off                   " required!
  Bundle 'unblevable/quick-scope'
 
  Bundle 'kelwin/vim-smali'
+ Bundle 'preservim/tagbar'
  call vundle#end()
 
  filetype plugin indent on   
