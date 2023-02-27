@@ -125,7 +125,10 @@ highlight Comment ctermfg=DarkBlue
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-    colorscheme gruvbox
+    " https://github.com/morhetz/gruvbox/wiki/Installation
+    autocmd vimenter * ++nested colorscheme gruvbox
+
+    " colorscheme gruvbox
     set background=dark
     set guioptions-=T
     set guioptions+=e
@@ -509,7 +512,14 @@ filetype off                   " required!
 
  Plug 'kelwin/vim-smali'
  Plug 'preservim/tagbar'
+
+ " color scheme
+ Plug 'morhetz/gruvbox'
+
  call plug#end()
+
+ 
+
 
  filetype plugin indent on   
 
