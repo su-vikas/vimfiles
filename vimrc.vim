@@ -447,71 +447,69 @@ endfunction
 com! DiffSaved call s:DiffWithSaved()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-"VUNDLE 
+"PLUG 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
+" https://github.com/junegunn/vim-plug
+
 filetype off                   " required!
+ " install Plug
+ let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+ if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+ endif
 
- set rtp+=~/.vim/bundle/Vundle.vim
- call vundle#rc()
-
-" let Vundle manage Vundle
- " required! 
- Bundle 'gmarik/vundle'
-
+ call plug#begin()
  " My Bundles here:
  "
  " original repos on github
- Bundle 'tpope/vim-fugitive'
- Bundle 'easymotion/vim-easymotion'
- Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
- Bundle 'pangloss/vim-javascript'    
- Bundle 'tmhedberg/SimpylFold' 
- Plugin 'dart-lang/dart-vim-plugin'
+ Plug 'tpope/vim-fugitive'
+ Plug 'easymotion/vim-easymotion'
+ Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+ Plug 'pangloss/vim-javascript'    
+ Plug 'tmhedberg/SimpylFold' 
+ Plug 'dart-lang/dart-vim-plugin'
  " The Silver Searcher is a fantastic command line tool to search source code in a project. WICKED FAST 
  "Bundle 'rking/ag.vim' 
  " Gundo displaying that undo tree in graphical form. 
- Bundle 'sjl/gundo.vim'
- Bundle 'kien/ctrlp.vim'
-
- " vim-scripts repos
- Bundle 'L9'
- Bundle 'FuzzyFinder'
+ Plug 'sjl/gundo.vim'
+ Plug 'kien/ctrlp.vim'
 
  "C IDE
- Bundle 'vim-scripts/c.vim'
+ Plug 'vim-scripts/c.vim'
 
  "Bundle 'vim-scripts/ShowMarks'
- Bundle 'tmhedberg/matchit'
+ Plug 'tmhedberg/matchit'
  "Bundle 'chazy/cscope_maps'
 
  " non github repos
- Bundle 'mbbill/undotree'
+ Plug 'mbbill/undotree'
  "Bundle 'klen/python-mode.git'
- Bundle 'Lokaltog/vim-powerline'
+ Plug 'Lokaltog/vim-powerline'
 
  "nerd commentor
- Bundle 'scrooloose/nerdcommenter'
- Bundle 'scrooloose/nerdtree'
+ Plug 'scrooloose/nerdcommenter'
+ Plug 'scrooloose/nerdtree'
  "Bundle 'scrooloose/syntastic'     " using ale, its async
  "if has("gui_running")
-     Bundle 'w0rp/ale'
+     Plug 'w0rp/ale'
  "endif
 
  "Bundle 'git://git.wincent.com/command-t.git'
- Bundle 'bling/vim-airline' 
+ Plug 'bling/vim-airline' 
 
  " autocompletion
- Bundle 'Valloric/YouCompleteMe'
+ Plug 'Valloric/YouCompleteMe'
 
  "Markdown folding
- Bundle 'nelstrom/vim-markdown-folding'
+ Plug 'nelstrom/vim-markdown-folding'
 
  " Lightning fast left-right movement in VIM
- Bundle 'unblevable/quick-scope'
+ Plug 'unblevable/quick-scope'
 
- Bundle 'kelwin/vim-smali'
- Bundle 'preservim/tagbar'
- call vundle#end()
+ Plug 'kelwin/vim-smali'
+ Plug 'preservim/tagbar'
+ call plug#end()
 
  filetype plugin indent on   
 
